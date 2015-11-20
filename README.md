@@ -5,6 +5,6 @@ Simple sliding tabs UI element customizable for iOS
 ![MCSlidingTabs Preview](/mcslidingtabs.gif?raw=true "MCSlidingTabs Preview")
 
 
-Next steps :
+##Next steps :
 - Add support of icons
 - Add this marvelous class to Cocoapods :)
