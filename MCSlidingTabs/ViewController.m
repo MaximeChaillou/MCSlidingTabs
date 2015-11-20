@@ -2,7 +2,7 @@
 //  ViewController.m
 //  MCSlidingTabs
 //
-//  Created by mchaillou on 16/11/2015.
+//  Created by Maxime Chaillou on 16/11/2015.
 //  Copyright © 2015 Maxime Chaillou. All rights reserved.
 //
 
@@ -22,6 +22,8 @@
     [self addTab:@"Red" forViewController:[sb instantiateViewControllerWithIdentifier:@"red"]];
     [self addTab:@"Green" forViewController:[sb instantiateViewControllerWithIdentifier:@"green"]];
     [self addTab:@"Blue" forViewController:[sb instantiateViewControllerWithIdentifier:@"blue"]];
+    
+    self.tabBarPosition = MCSlidingTabsPositionBottom;
 }
 
 - (void)didReceiveMemoryWarning {

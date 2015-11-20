@@ -67,18 +67,28 @@ CGFloat const HeightStatusBar = 20.f;
 }
 
 - (void)initViews {
-    // Create the content view
-    self.contentView = [[UIView alloc] initWithFrame:CGRectMake(0, HeightStatusBar + self.barHeight, self.view.frame.size.width, self.view.frame.size.height - HeightStatusBar - self.barHeight)];
-    [self.view addSubview:self.contentView];
+    if (self.tabBarPosition == MCSlidingTabsPositionTop) {
+        // Create the content view
+        self.contentView = [[UIView alloc] initWithFrame:CGRectMake(0, HeightStatusBar + self.barHeight, self.view.frame.size.width, self.view.frame.size.height - HeightStatusBar - self.barHeight)];
+        // Create the tabbar view
+        self.tabBarView = [[UIView alloc] initWithFrame:CGRectMake(0, HeightStatusBar, self.screenSize.width, self.barHeight)];
+        // Create the background for the selected tab
+        self.backgroundSelectedTabView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.screenSize.width / self.tabsArray.count, self.barHeight)];
+    }
+    else if (self.tabBarPosition == MCSlidingTabsPositionBottom) {
+        // Create the content view
+        self.contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.screenSize.height - self.barHeight)];
+        // Create the tabbar view
+        self.tabBarView = [[UIView alloc] initWithFrame:CGRectMake(0, self.screenSize.height - self.barHeight, self.screenSize.width, self.barHeight)];
+        // Create the background for the selected tab
+        self.backgroundSelectedTabView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.screenSize.width / self.tabsArray.count, self.barHeight)];
+    }
     
-    // Create the tabbar view
-    self.tabBarView = [[UIView alloc] initWithFrame:CGRectMake(0, HeightStatusBar, self.screenSize.width, self.barHeight)];
-    [self.view addSubview:self.tabBarView];
     self.tabBarView.backgroundColor = self.backgroundColorNormal;
-    
-    // Create the background for the selected tab
-    self.backgroundSelectedTabView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.screenSize.width / self.tabsArray.count, self.barHeight)];
     self.backgroundSelectedTabView.backgroundColor = self.backgroundColorSelected;
+    
+    [self.view addSubview:self.contentView];
+    [self.view addSubview:self.tabBarView];
     [self.tabBarView addSubview:self.backgroundSelectedTabView];
 }
 
