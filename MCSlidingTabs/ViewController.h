@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MCSlidingTabs.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : MCSlidingTabs
 
 
 @end

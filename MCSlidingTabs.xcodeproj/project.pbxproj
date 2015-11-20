@@ -15,6 +15,7 @@
 		60A8E1701BFA160200381CF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60A8E16E1BFA160200381CF8 /* LaunchScreen.storyboard */; };
 		60A8E17B1BFA160200381CF8 /* MCSlidingTabsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A8E17A1BFA160200381CF8 /* MCSlidingTabsTests.m */; };
 		60A8E1861BFA160200381CF8 /* MCSlidingTabsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A8E1851BFA160200381CF8 /* MCSlidingTabsUITests.m */; };
+		60A8E1951BFA170400381CF8 /* MCSlidingTabs.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A8E1941BFA170400381CF8 /* MCSlidingTabs.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		60A8E1811BFA160200381CF8 /* MCSlidingTabsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MCSlidingTabsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60A8E1851BFA160200381CF8 /* MCSlidingTabsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCSlidingTabsUITests.m; sourceTree = "<group>"; };
 		60A8E1871BFA160200381CF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60A8E1931BFA170400381CF8 /* MCSlidingTabs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSlidingTabs.h; sourceTree = "<group>"; };
+		60A8E1941BFA170400381CF8 /* MCSlidingTabs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSlidingTabs.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +104,10 @@
 		60A8E15F1BFA160200381CF8 /* MCSlidingTabs */ = {
 			isa = PBXGroup;
 			children = (
-				60A8E1631BFA160200381CF8 /* AppDelegate.h */,
-				60A8E1641BFA160200381CF8 /* AppDelegate.m */,
+				60A8E19D1BFA1F7000381CF8 /* AppDelegate */,
 				60A8E1661BFA160200381CF8 /* ViewController.h */,
 				60A8E1671BFA160200381CF8 /* ViewController.m */,
+				60A8E19C1BFA1F5200381CF8 /* MCSlidingTabs */,
 				60A8E1691BFA160200381CF8 /* Main.storyboard */,
 				60A8E16C1BFA160200381CF8 /* Assets.xcassets */,
 				60A8E16E1BFA160200381CF8 /* LaunchScreen.storyboard */,
@@ -138,6 +141,24 @@
 				60A8E1871BFA160200381CF8 /* Info.plist */,
 			);
 			path = MCSlidingTabsUITests;
+			sourceTree = "<group>";
+		};
+		60A8E19C1BFA1F5200381CF8 /* MCSlidingTabs */ = {
+			isa = PBXGroup;
+			children = (
+				60A8E1931BFA170400381CF8 /* MCSlidingTabs.h */,
+				60A8E1941BFA170400381CF8 /* MCSlidingTabs.m */,
+			);
+			name = MCSlidingTabs;
+			sourceTree = "<group>";
+		};
+		60A8E19D1BFA1F7000381CF8 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				60A8E1631BFA160200381CF8 /* AppDelegate.h */,
+				60A8E1641BFA160200381CF8 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +293,7 @@
 			files = (
 				60A8E1681BFA160200381CF8 /* ViewController.m in Sources */,
 				60A8E1651BFA160200381CF8 /* AppDelegate.m in Sources */,
+				60A8E1951BFA170400381CF8 /* MCSlidingTabs.m in Sources */,
 				60A8E1621BFA160200381CF8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
