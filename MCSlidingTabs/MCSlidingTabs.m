@@ -41,6 +41,7 @@ CGFloat const HeightStatusBar = 20.f;
     self.backgroundColorNormal = [UIColor purpleColor];
     self.foregroundColorSelected = [UIColor whiteColor];
     self.backgroundColorSelected = [UIColor lightGrayColor];
+    self.tabBarPosition = MCSlidingTabsPositionBottom;
     self.isAnimatedViews = YES;
     self.barHeight = 50.f;
 }
@@ -92,7 +93,7 @@ CGFloat const HeightStatusBar = 20.f;
     [self.tabBarView addSubview:self.backgroundSelectedTabView];
 }
 
-#pragma mark - Tab init
+#pragma mark - Tab manager
 
 // Load the VC matching with the button
 - (void) tabTouched: (UIButton*) button {
