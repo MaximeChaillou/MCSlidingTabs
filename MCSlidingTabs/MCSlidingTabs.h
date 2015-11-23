@@ -37,6 +37,10 @@ typedef enum {
 @property MCSlidingTabsPosition tabBarPosition;
 @property BOOL isAnimatedViews;
 
+
+// Methods
 - (void)addTab: (NSString*)tabTitle forViewController: (UIViewController*)vc;
+- (void)addTabImage:(UIImage *)tabImage forViewController:(UIViewController*)vc;
+- (void)addTab:(NSString *)tabTitle andImage:(UIImage *)tabImage forViewController:(UIViewController*)vc;
 
 @end

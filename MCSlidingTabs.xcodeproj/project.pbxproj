@@ -16,6 +16,7 @@
 		60A8E17B1BFA160200381CF8 /* MCSlidingTabsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A8E17A1BFA160200381CF8 /* MCSlidingTabsTests.m */; };
 		60A8E1861BFA160200381CF8 /* MCSlidingTabsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A8E1851BFA160200381CF8 /* MCSlidingTabsUITests.m */; };
 		60A8E1951BFA170400381CF8 /* MCSlidingTabs.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A8E1941BFA170400381CF8 /* MCSlidingTabs.m */; };
+		60A8E1AE1C037E2600381CF8 /* iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60A8E1AD1C037E2600381CF8 /* iphone@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		60A8E1871BFA160200381CF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60A8E1931BFA170400381CF8 /* MCSlidingTabs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSlidingTabs.h; sourceTree = "<group>"; };
 		60A8E1941BFA170400381CF8 /* MCSlidingTabs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSlidingTabs.m; sourceTree = "<group>"; };
+		60A8E1AD1C037E2600381CF8 /* iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 		60A8E19C1BFA1F5200381CF8 /* MCSlidingTabs */ = {
 			isa = PBXGroup;
 			children = (
+				60A8E1AD1C037E2600381CF8 /* iphone@2x.png */,
 				60A8E1931BFA170400381CF8 /* MCSlidingTabs.h */,
 				60A8E1941BFA170400381CF8 /* MCSlidingTabs.m */,
 			);
@@ -265,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60A8E1701BFA160200381CF8 /* LaunchScreen.storyboard in Resources */,
+				60A8E1AE1C037E2600381CF8 /* iphone@2x.png in Resources */,
 				60A8E16D1BFA160200381CF8 /* Assets.xcassets in Resources */,
 				60A8E16B1BFA160200381CF8 /* Main.storyboard in Resources */,
 			);

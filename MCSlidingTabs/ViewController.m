@@ -18,10 +18,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
-    [self addTab:@"Red" forViewController:[sb instantiateViewControllerWithIdentifier:@"red"]];
-    [self addTab:@"Green" forViewController:[sb instantiateViewControllerWithIdentifier:@"green"]];
-    [self addTab:@"Blue" forViewController:[sb instantiateViewControllerWithIdentifier:@"blue"]];
+
+    [self addTab:@"Red" andImage:[UIImage imageNamed:@"iphone"] forViewController:[sb instantiateViewControllerWithIdentifier:@"red"]];
+    [self addTab:@"Green" andImage:[UIImage imageNamed:@"iphone"] forViewController:[sb instantiateViewControllerWithIdentifier:@"green"]];
+    [self addTab:@"Blue" andImage:[UIImage imageNamed:@"iphone"] forViewController:[sb instantiateViewControllerWithIdentifier:@"blue"]];
     
     self.tabBarPosition = MCSlidingTabsPositionTop;
     self.barHeight = 40.0f;

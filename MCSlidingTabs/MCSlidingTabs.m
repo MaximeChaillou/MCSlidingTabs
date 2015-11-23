@@ -37,15 +37,18 @@ CGFloat const HeightStatusBar = 20.f;
     // Initiate Variables & default values
     self.screenSize = [[UIScreen mainScreen] bounds].size;
     self.tabsArray = [NSMutableArray new];
+    
     self.foregroundColorNormal = [UIColor grayColor];
     self.backgroundColorNormal = [UIColor purpleColor];
     self.foregroundColorSelected = [UIColor whiteColor];
     self.backgroundColorSelected = [UIColor lightGrayColor];
     self.foregroundColorHighlighted = [UIColor darkGrayColor];
+    
+    self.tabFont = [UIFont systemFontOfSize:17.0];
+    
+    self.barHeight = 50.f;
     self.tabBarPosition = MCSlidingTabsPositionBottom;
     self.isAnimatedViews = YES;
-    self.barHeight = 50.f;
-    self.tabFont = [UIFont systemFontOfSize:17.0];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -139,7 +142,7 @@ CGFloat const HeightStatusBar = 20.f;
             [self addChildViewController:tab.viewController];
             [self.contentView addSubview:tab.viewController.view];
             
-            [self highlightMe:tab.button];
+            [self selectMe:tab.button];
             
             self.tabSelected = tab;
 
@@ -189,13 +192,24 @@ CGFloat const HeightStatusBar = 20.f;
 #pragma mark - Tab init
 
 // Add a new tabObject to the tabsArray.
-- (void)addTab:(NSString*)tabTitle forViewController:(UIViewController*)vc {
+- (void)addTab:(NSString *)tabTitle forViewController:(UIViewController*)vc {
     [self addTab:tabTitle andImage:nil forViewController:vc];
 }
 
-- (void)addTab:(NSString*)tabTitle andImage:(UIImage *)image forViewController:(UIViewController*)vc {
+- (void)addTabImage:(UIImage *)tabImage forViewController:(UIViewController*)vc {
+    [self addTab:nil andImage:tabImage forViewController:vc];
+}
+
+- (void)addTab:(NSString *)tabTitle andImage:(UIImage *)tabImage forViewController:(UIViewController*)vc {
     MCTabObject* tab = [MCTabObject new];
-    tab.button = [self makeButton:tabTitle];
+    tab.button = [self makeButton];
+    if (tabTitle != nil) {
+        [tab.button setTitle:tabTitle forState:UIControlStateNormal];
+    }
+    if (tabImage != nil) {
+        UIImage *image = [tabImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [tab.button setImage:image forState:UIControlStateNormal];
+    }
     tab.viewController = vc;
     [self.tabsArray addObject:tab];
 }
@@ -203,22 +217,23 @@ CGFloat const HeightStatusBar = 20.f;
 
 #pragma mark - Buttons
 
-- (UIButton *)makeButton:(NSString *)title {
+- (UIButton *)makeButton {
     UIButton* button = [UIButton new];
-    [button setTitle:title forState:UIControlStateNormal];
     [button setTitleColor:self.foregroundColorHighlighted forState:UIControlStateHighlighted];
     [button addTarget:self action:@selector(tabTouched:) forControlEvents:UIControlEventTouchUpInside];
     button.titleLabel.font = self.tabFont;
     return [self normalMe:button];
 }
 
-- (UIButton *)highlightMe:(UIButton *)button {
+- (UIButton *)selectMe:(UIButton *)button {
     [button setTitleColor:self.foregroundColorSelected forState:UIControlStateNormal];
+    button.tintColor = self.foregroundColorSelected;
     return button;
 }
 
 - (UIButton *)normalMe:(UIButton *)button {
     [button setTitleColor:self.foregroundColorNormal forState:UIControlStateNormal];
+    button.tintColor = self.foregroundColorNormal;
     return button;
 }
 
