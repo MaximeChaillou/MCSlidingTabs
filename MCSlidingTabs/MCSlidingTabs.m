@@ -41,6 +41,7 @@ CGFloat const HeightStatusBar = 20.f;
     self.backgroundColorNormal = [UIColor purpleColor];
     self.foregroundColorSelected = [UIColor whiteColor];
     self.backgroundColorSelected = [UIColor lightGrayColor];
+    self.foregroundColorHighlighted = [UIColor darkGrayColor];
     self.tabBarPosition = MCSlidingTabsPositionBottom;
     self.isAnimatedViews = YES;
     self.barHeight = 50.f;
@@ -96,7 +97,7 @@ CGFloat const HeightStatusBar = 20.f;
 #pragma mark - Tab manager
 
 // Load the VC matching with the button
-- (void) tabTouched: (UIButton*) button {
+- (void)tabTouched: (UIButton*) button {
     for (MCTabObject* tab in self.tabsArray) {
         // Do nothing if the tab touched is the tab selected
         if ([tab isEqual:self.tabSelected]) {
@@ -110,7 +111,7 @@ CGFloat const HeightStatusBar = 20.f;
     }
 }
 
-- (void) selectTab:(MCTabObject *)selectedTab animated:(BOOL)animated {
+- (void)selectTab:(MCTabObject *)selectedTab animated:(BOOL)animated {
     
     for (MCTabObject *tab in self.tabsArray) {
         if ([tab isEqual:selectedTab]) {
@@ -204,6 +205,7 @@ CGFloat const HeightStatusBar = 20.f;
 - (UIButton *)makeButton:(NSString *)title {
     UIButton* button = [UIButton new];
     [button setTitle:title forState:UIControlStateNormal];
+    [button setTitleColor:self.foregroundColorHighlighted forState:UIControlStateHighlighted];
     [button addTarget:self action:@selector(tabTouched:) forControlEvents:UIControlEventTouchUpInside];
     return [self normalMe:button];
 }

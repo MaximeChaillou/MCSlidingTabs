@@ -27,6 +27,7 @@ typedef enum {
 @property UIColor* backgroundColorNormal;
 @property UIColor* foregroundColorSelected;
 @property UIColor* backgroundColorSelected;
+@property UIColor* foregroundColorHighlighted;
 
 // MCSlidingsTabs Properties
 @property CGFloat barHeight;
