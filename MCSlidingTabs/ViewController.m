@@ -23,7 +23,8 @@
     [self addTab:@"Green" forViewController:[sb instantiateViewControllerWithIdentifier:@"green"]];
     [self addTab:@"Blue" forViewController:[sb instantiateViewControllerWithIdentifier:@"blue"]];
     
-    self.tabBarPosition = MCSlidingTabsPositionBottom;
+    self.tabBarPosition = MCSlidingTabsPositionTop;
+    self.barHeight = 40.0f;
 }
 
 - (void)didReceiveMemoryWarning {

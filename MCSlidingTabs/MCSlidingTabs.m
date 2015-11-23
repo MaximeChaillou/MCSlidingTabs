@@ -45,6 +45,7 @@ CGFloat const HeightStatusBar = 20.f;
     self.tabBarPosition = MCSlidingTabsPositionBottom;
     self.isAnimatedViews = YES;
     self.barHeight = 50.f;
+    self.tabFont = [UIFont systemFontOfSize:17.0];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -207,6 +208,7 @@ CGFloat const HeightStatusBar = 20.f;
     [button setTitle:title forState:UIControlStateNormal];
     [button setTitleColor:self.foregroundColorHighlighted forState:UIControlStateHighlighted];
     [button addTarget:self action:@selector(tabTouched:) forControlEvents:UIControlEventTouchUpInside];
+    button.titleLabel.font = self.tabFont;
     return [self normalMe:button];
 }
 
