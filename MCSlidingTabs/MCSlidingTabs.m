@@ -105,10 +105,12 @@ CGFloat const HeightStatusBar = 20.f;
     for (MCTabObject* tab in self.tabsArray) {
         // Do nothing if the tab touched is the tab selected
         if ([tab isEqual:self.tabSelected]) {
+            button.tintColor = self.foregroundColorSelected;
             continue;
         }
         // The tab touched is found, let's change the view
         else if ([tab.button isEqual:button]) {
+            button.tintColor = self.foregroundColorNormal;
             [self selectTab:tab animated:self.isAnimatedViews];
             break;
         }
@@ -214,14 +216,15 @@ CGFloat const HeightStatusBar = 20.f;
     [self.tabsArray addObject:tab];
 }
 
-
 #pragma mark - Buttons
 
 - (UIButton *)makeButton {
-    UIButton* button = [UIButton new];
+    UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitleColor:self.foregroundColorHighlighted forState:UIControlStateHighlighted];
     [button addTarget:self action:@selector(tabTouched:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(highlightMe:) forControlEvents:UIControlEventTouchDown];
     button.titleLabel.font = self.tabFont;
+    [button setAdjustsImageWhenHighlighted:NO];
     return [self normalMe:button];
 }
 
@@ -236,5 +239,10 @@ CGFloat const HeightStatusBar = 20.f;
     button.tintColor = self.foregroundColorNormal;
     return button;
 }
+
+- (void)highlightMe: (UIButton*) button {
+    button.tintColor = self.foregroundColorHighlighted;
+}
+
 
 @end
