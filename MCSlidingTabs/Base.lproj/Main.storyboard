@@ -36,7 +36,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" red="0.19295703450000001" green="0.52736557009999996" blue="0.79906674209999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.13680141369463086" green="0.56391129157650999" blue="0.79906674209999995" alpha="0.94865301724137929" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HzQ-ff-z3E" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -74,7 +74,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" red="0.89411764709999997" green="0.1450980392" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.16666666666666663" blue="0.16666666666666663" alpha="0.80460668103448274" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSK-FL-cKy" userLabel="First Responder" sceneMemberID="firstResponder"/>

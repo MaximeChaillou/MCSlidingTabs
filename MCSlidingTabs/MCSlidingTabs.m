@@ -38,15 +38,15 @@ CGFloat const HeightStatusBar = 20.f;
     self.screenSize = [[UIScreen mainScreen] bounds].size;
     self.tabsArray = [NSMutableArray new];
     
-    self.foregroundColorNormal = [UIColor grayColor];
-    self.backgroundColorNormal = [UIColor purpleColor];
+    self.foregroundColorNormal = [UIColor lightGrayColor];
+    self.backgroundColorNormal = [UIColor groupTableViewBackgroundColor];
     self.foregroundColorSelected = [UIColor whiteColor];
-    self.backgroundColorSelected = [UIColor lightGrayColor];
+    self.backgroundColorSelected = [UIColor colorWithRed:65/255.0 green:131/255.0 blue:215/255.0 alpha:1.0];
     self.foregroundColorHighlighted = [UIColor darkGrayColor];
     
     self.tabFont = [UIFont systemFontOfSize:17.0];
     
-    self.barHeight = 50.f;
+    self.barHeight = 40.f;
     self.tabBarPosition = MCSlidingTabsPositionBottom;
     self.isAnimatedViews = YES;
 }
