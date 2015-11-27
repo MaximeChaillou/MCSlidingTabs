@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MCSlidingTabs"
-  s.version      = "0.1"
+  s.version      = "0.1.1"
   s.summary      = "Simple sliding tabs UI element customizable for iOS"
 
   # This description is used to generate tags and improve search results.
@@ -25,6 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
+"A customizable sliding tabs, easy to implement. It can have from 2 to 5 tabs, and custom colors, titles and icons. There are 2 positions for the tab bar: top and bottom. You can also choose the tab design : only image, only text or both."
                    DESC
 
   s.homepage     = "https://github.com/MaximeChaillou/MCSlidingTabs"
@@ -79,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/MaximeChaillou/MCSlidingTabs.git", :tag => "v0.1" }
+  s.source       = { :git => "https://github.com/MaximeChaillou/MCSlidingTabs.git", :tag => "v0.1.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
