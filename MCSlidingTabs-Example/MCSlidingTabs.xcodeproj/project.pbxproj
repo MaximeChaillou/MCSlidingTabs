@@ -101,6 +101,7 @@
 				60A8E19D1BFA1F7000381CF8 /* AppDelegate */,
 				60A8E1661BFA160200381CF8 /* ViewController.h */,
 				60A8E1671BFA160200381CF8 /* ViewController.m */,
+				60A8E1AD1C037E2600381CF8 /* iphone@2x.png */,
 				60A8E19C1BFA1F5200381CF8 /* MCSlidingTabs */,
 				60A8E1691BFA160200381CF8 /* Main.storyboard */,
 				60A8E16C1BFA160200381CF8 /* Assets.xcassets */,
@@ -122,7 +123,6 @@
 		60A8E19C1BFA1F5200381CF8 /* MCSlidingTabs */ = {
 			isa = PBXGroup;
 			children = (
-				60A8E1AD1C037E2600381CF8 /* iphone@2x.png */,
 				60A8E1931BFA170400381CF8 /* MCSlidingTabs.h */,
 				60A8E1941BFA170400381CF8 /* MCSlidingTabs.m */,
 			);
