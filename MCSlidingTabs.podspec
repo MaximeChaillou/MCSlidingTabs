@@ -1,4 +1,4 @@
-#
+1
 #  Be sure to run `pod spec lint MCSlidingTabs.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
 #
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MCSlidingTabs"
-  s.version      = "0.2.0"
+  s.version      = "0.2.1"
   s.summary      = "Simple sliding tabs UI element customizable for iOS"
 
   # This description is used to generate tags and improve search results.
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/MaximeChaillou/MCSlidingTabs.git", :tag => "v0.2.0" }
+  s.source       = { :git => "https://github.com/MaximeChaillou/MCSlidingTabs.git", :tag => "v0.2.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
