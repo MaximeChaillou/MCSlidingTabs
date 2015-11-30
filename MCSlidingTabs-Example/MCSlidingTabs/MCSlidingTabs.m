@@ -212,6 +212,9 @@ CGFloat const HeightStatusBar = 20.f;
         UIImage *image = [tabImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         [tab.button setImage:image forState:UIControlStateNormal];
     }
+    if (tabImage != nil && tabTitle != nil) {
+        [tab.button setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 6)];
+    }
     tab.viewController = vc;
     [self.tabsArray addObject:tab];
 }
