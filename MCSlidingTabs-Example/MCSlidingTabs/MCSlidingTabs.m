@@ -135,7 +135,7 @@ typedef enum {
     for (MCTabObject *tab in self.tabsArray) {
         if ([tab isEqual:selectedTab]) {
             
-            MCSlidingTabsDirection direction;
+            MCSlidingTabsDirection direction = MCSlidingTabsDirectionRight;
             
             // Positionning the view before or after the actual view
             if (animated) {
@@ -207,15 +207,15 @@ typedef enum {
 #pragma mark - Tab init
 
 // Add a new tabObject to the tabsArray.
-- (void)addTab:(NSString *)tabTitle forViewController:(UIViewController*)vc {
+- (void)addTab:(NSString *)tabTitle forViewController:(UIViewController *)vc {
     [self addTab:tabTitle andImage:nil forViewController:vc];
 }
 
-- (void)addTabImage:(UIImage *)tabImage forViewController:(UIViewController*)vc {
+- (void)addTabImage:(UIImage *)tabImage forViewController:(UIViewController *)vc {
     [self addTab:nil andImage:tabImage forViewController:vc];
 }
 
-- (void)addTab:(NSString *)tabTitle andImage:(UIImage *)tabImage forViewController:(UIViewController*)vc {
+- (void)addTab:(NSString *)tabTitle andImage:(UIImage *)tabImage forViewController:(UIViewController *)vc {
     MCTabObject* tab = [MCTabObject new];
     tab.button = [self makeButton];
     if (tabTitle != nil) {

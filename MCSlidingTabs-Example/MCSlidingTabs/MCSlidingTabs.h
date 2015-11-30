@@ -72,7 +72,7 @@ typedef enum {
  * @param vc The viewController linked to the tab.
  * @return void.
  */
-- (void)addTab: (NSString*)tabTitle forViewController: (UIViewController*)vc;
+- (void)addTab:(NSString *)tabTitle forViewController:(UIViewController *)vc;
 
 /*!
  * @discussion Add a tab with an image only.
@@ -80,7 +80,7 @@ typedef enum {
  * @param vc The viewController linked to the tab.
  * @return void.
  */
-- (void)addTabImage:(UIImage *)tabImage forViewController:(UIViewController*)vc;
+- (void)addTabImage:(UIImage *)tabImage forViewController:(UIViewController *)vc;
 
 /*!
  * @discussion A really simple way to calculate the sum of two numbers.
@@ -89,6 +89,6 @@ typedef enum {
  * @param vc The viewController linked to the tab.
  * @return void.
  */
-- (void)addTab:(NSString *)tabTitle andImage:(UIImage *)tabImage forViewController:(UIViewController*)vc;
+- (void)addTab:(NSString *)tabTitle andImage:(UIImage *)tabImage forViewController:(UIViewController *)vc;
 
 @end
