@@ -34,7 +34,7 @@ That's it ! You have now your tab bar working.
 
 If you want a tab with the title only you can use:
 ```objective-c
-- (void)addTab: (NSString*)tabTitle forViewController: (UIViewController*)vc;
+- (void)addTab:(NSString *)tabTitle forViewController: (UIViewController*)vc;
 ```
 
 And if you want an image only, use this:
