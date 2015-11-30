@@ -70,7 +70,7 @@ typedef enum {
  * @discussion Add a tab with a title only.
  * @param tabTitle A NSString to be used as title of the tab.
  * @param vc The viewController linked to the tab.
- * @return void.
+ * @return void
  */
 - (void)addTab:(NSString *)tabTitle forViewController:(UIViewController *)vc;
 
@@ -78,7 +78,7 @@ typedef enum {
  * @discussion Add a tab with an image only.
  * @param tabImage A UIImage to be used as icon of the tab.
  * @param vc The viewController linked to the tab.
- * @return void.
+ * @return void
  */
 - (void)addTabImage:(UIImage *)tabImage forViewController:(UIViewController *)vc;
 
@@ -87,7 +87,7 @@ typedef enum {
  * @param tabTitle A NSString to be used as title of the tab.
  * @param tabImage A UIImage to be used as icon of the tab.
  * @param vc The viewController linked to the tab.
- * @return void.
+ * @return void
  */
 - (void)addTab:(NSString *)tabTitle andImage:(UIImage *)tabImage forViewController:(UIViewController *)vc;
 
