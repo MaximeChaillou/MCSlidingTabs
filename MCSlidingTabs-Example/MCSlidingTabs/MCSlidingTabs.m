@@ -137,12 +137,12 @@ typedef enum {
                 if (self.tabSelected != nil && [self.tabsArray indexOfObject:selectedTab] > [self.tabsArray indexOfObject:self.tabSelected]) {
                     // RIGHT
                     direction = MCSlidingTabsDirectionRight;
-                    vcFrame.origin.x = -vcFrame.size.width;
+                    vcFrame.origin.x = vcFrame.size.width;
                 }
                 else if (self.tabSelected != nil && [self.tabsArray indexOfObject:selectedTab] < [self.tabsArray indexOfObject:self.tabSelected]){
                     // LEFT
                     direction = MCSlidingTabsDirectionLeft;
-                    vcFrame.origin.x = vcFrame.size.width;
+                    vcFrame.origin.x = -vcFrame.size.width;
                 }
                 tab.viewController.view.frame = vcFrame;
             }
@@ -166,10 +166,10 @@ typedef enum {
                 if (animated) {
                     CGRect viewFrame = self.contentView.frame;
                     if (direction == MCSlidingTabsDirectionRight) {
-                        viewFrame.origin.x = viewFrame.size.width;
+                        viewFrame.origin.x = -viewFrame.size.width;
                     }
                     else if (direction == MCSlidingTabsDirectionLeft) {
-                        viewFrame.origin.x = -viewFrame.size.width;
+                        viewFrame.origin.x = viewFrame.size.width;
                     }
                     self.contentView.frame = viewFrame;
                 }
