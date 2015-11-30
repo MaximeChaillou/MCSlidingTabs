@@ -8,6 +8,13 @@
 
 #import "MCSlidingTabs.h"
 
+@interface MCTabObject : NSObject
+
+@property UIViewController* viewController;
+@property UIButton* button;
+
+@end
+
 @interface MCSlidingTabs ()
 
 @property (strong, nonatomic) NSMutableArray* tabsArray;
