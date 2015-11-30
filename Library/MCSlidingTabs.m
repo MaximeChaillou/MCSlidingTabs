@@ -8,6 +8,13 @@
 
 #import "MCSlidingTabs.h"
 
+@interface MCTabObject : NSObject
+
+@property UIViewController* viewController;
+@property UIButton* button;
+
+@end
+
 @interface MCSlidingTabs ()
 
 @property (strong, nonatomic) NSMutableArray* tabsArray;
@@ -16,6 +23,7 @@
 @property (strong, nonatomic) MCTabObject *tabSelected;
 @property (strong, nonatomic) UIView *contentView;
 @property CGSize screenSize;
+@property CGFloat heightStatusBar;
 
 typedef enum {
     MCSlidingTabsDirectionLeft,
@@ -27,8 +35,6 @@ typedef enum {
 @implementation MCTabObject
 
 @end
-
-CGFloat const HeightStatusBar = 20.f;
 
 @implementation MCSlidingTabs
 
@@ -49,6 +55,13 @@ CGFloat const HeightStatusBar = 20.f;
     self.barHeight = 40.f;
     self.tabBarPosition = MCSlidingTabsPositionBottom;
     self.isAnimatedViews = YES;
+    
+    if ([self.parentViewController isKindOfClass:[UINavigationController class]]) {
+        self.heightStatusBar = 0;
+    }
+    else {
+        self.heightStatusBar = 20;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -59,7 +72,7 @@ CGFloat const HeightStatusBar = 20.f;
     NSAssert((tabCount >= 2) && (tabCount <= 5), @"You have to initialize the controller with 2 to 5 tabs");
     
     [self initViews];
-
+    
     // Adding buttons to the tabBar
     int count = 0;
     for (MCTabObject* tab in self.tabsArray) {
@@ -75,9 +88,9 @@ CGFloat const HeightStatusBar = 20.f;
 - (void)initViews {
     if (self.tabBarPosition == MCSlidingTabsPositionTop) {
         // Create the content view
-        self.contentView = [[UIView alloc] initWithFrame:CGRectMake(0, HeightStatusBar + self.barHeight, self.view.frame.size.width, self.view.frame.size.height - HeightStatusBar - self.barHeight)];
+        self.contentView = [[UIView alloc] initWithFrame:CGRectMake(0, self.heightStatusBar + self.barHeight, self.view.frame.size.width, self.view.frame.size.height - self.heightStatusBar - self.barHeight)];
         // Create the tabbar view
-        self.tabBarView = [[UIView alloc] initWithFrame:CGRectMake(0, HeightStatusBar, self.screenSize.width, self.barHeight)];
+        self.tabBarView = [[UIView alloc] initWithFrame:CGRectMake(0, self.heightStatusBar, self.screenSize.width, self.barHeight)];
         // Create the background for the selected tab
         self.backgroundSelectedTabView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.screenSize.width / self.tabsArray.count, self.barHeight)];
     }
@@ -122,7 +135,7 @@ CGFloat const HeightStatusBar = 20.f;
     for (MCTabObject *tab in self.tabsArray) {
         if ([tab isEqual:selectedTab]) {
             
-            MCSlidingTabsDirection direction;
+            MCSlidingTabsDirection direction = MCSlidingTabsDirectionRight;
             
             // Positionning the view before or after the actual view
             if (animated) {
@@ -131,12 +144,12 @@ CGFloat const HeightStatusBar = 20.f;
                 if (self.tabSelected != nil && [self.tabsArray indexOfObject:selectedTab] > [self.tabsArray indexOfObject:self.tabSelected]) {
                     // RIGHT
                     direction = MCSlidingTabsDirectionRight;
-                    vcFrame.origin.x = -vcFrame.size.width;
+                    vcFrame.origin.x = vcFrame.size.width;
                 }
                 else if (self.tabSelected != nil && [self.tabsArray indexOfObject:selectedTab] < [self.tabsArray indexOfObject:self.tabSelected]){
                     // LEFT
                     direction = MCSlidingTabsDirectionLeft;
-                    vcFrame.origin.x = vcFrame.size.width;
+                    vcFrame.origin.x = -vcFrame.size.width;
                 }
                 tab.viewController.view.frame = vcFrame;
             }
@@ -147,27 +160,27 @@ CGFloat const HeightStatusBar = 20.f;
             [self selectMe:tab.button];
             
             self.tabSelected = tab;
-
+            
             // Let's animate
             [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
                 // Animate the background
                 CGRect frame = self.backgroundSelectedTabView.frame;
                 frame.origin.x = tab.button.frame.size.width * [self.tabsArray indexOfObject:selectedTab];
-
+                
                 self.backgroundSelectedTabView.frame = frame;
                 
                 // Animate the content view
                 if (animated) {
                     CGRect viewFrame = self.contentView.frame;
                     if (direction == MCSlidingTabsDirectionRight) {
-                        viewFrame.origin.x = viewFrame.size.width;
+                        viewFrame.origin.x = -viewFrame.size.width;
                     }
                     else if (direction == MCSlidingTabsDirectionLeft) {
-                        viewFrame.origin.x = -viewFrame.size.width;
+                        viewFrame.origin.x = viewFrame.size.width;
                     }
                     self.contentView.frame = viewFrame;
                 }
-
+                
             } completion:^(BOOL finished) {
                 // Remove the old viewController
                 if (self.childViewControllers.count > 1) {
@@ -194,15 +207,15 @@ CGFloat const HeightStatusBar = 20.f;
 #pragma mark - Tab init
 
 // Add a new tabObject to the tabsArray.
-- (void)addTab:(NSString *)tabTitle forViewController:(UIViewController*)vc {
+- (void)addTab:(NSString *)tabTitle forViewController:(UIViewController *)vc {
     [self addTab:tabTitle andImage:nil forViewController:vc];
 }
 
-- (void)addTabImage:(UIImage *)tabImage forViewController:(UIViewController*)vc {
+- (void)addTabImage:(UIImage *)tabImage forViewController:(UIViewController *)vc {
     [self addTab:nil andImage:tabImage forViewController:vc];
 }
 
-- (void)addTab:(NSString *)tabTitle andImage:(UIImage *)tabImage forViewController:(UIViewController*)vc {
+- (void)addTab:(NSString *)tabTitle andImage:(UIImage *)tabImage forViewController:(UIViewController *)vc {
     MCTabObject* tab = [MCTabObject new];
     tab.button = [self makeButton];
     if (tabTitle != nil) {
@@ -211,6 +224,9 @@ CGFloat const HeightStatusBar = 20.f;
     if (tabImage != nil) {
         UIImage *image = [tabImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         [tab.button setImage:image forState:UIControlStateNormal];
+    }
+    if (tabImage != nil && tabTitle != nil) {
+        [tab.button setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 6)];
     }
     tab.viewController = vc;
     [self.tabsArray addObject:tab];
