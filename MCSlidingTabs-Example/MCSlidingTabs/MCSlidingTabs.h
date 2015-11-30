@@ -83,7 +83,7 @@ typedef enum {
 - (void)addTabImage:(UIImage *)tabImage forViewController:(UIViewController *)vc;
 
 /*!
- * @discussion A really simple way to calculate the sum of two numbers.
+ * @discussion Add a tab with a title and an image.
  * @param tabTitle A NSString to be used as title of the tab.
  * @param tabImage A UIImage to be used as icon of the tab.
  * @param vc The viewController linked to the tab.
