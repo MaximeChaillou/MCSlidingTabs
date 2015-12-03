@@ -2,7 +2,7 @@
 Simple sliding tabs UI element fully customizable for iOS
 
 ##Preview
-![MCSlidingTabs Top Preview](/mcslidingtabsTop.gif?raw=true "MCSlidingTabs Top Preview") ![MCSlidingTabs Bottom Preview](/mcslidingtabsBottom.gif?raw=true "MCSlidingTabs Bottom Preview")
+![MCSlidingTabs Top Preview](mcslidingtabsTop.gif "MCSlidingTabs Top Preview") ![MCSlidingTabs Bottom Preview](mcslidingtabsBottom.gif "MCSlidingTabs Bottom Preview")
 
 
 ##Documentation :
