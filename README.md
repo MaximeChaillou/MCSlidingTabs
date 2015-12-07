@@ -1,3 +1,8 @@
+[![Version](https://img.shields.io/cocoapods/v/MCSlidingTabs.svg?style=flat-square)]()
+[![Licence](https://img.shields.io/cocoapods/l/MCSlidingTabs.svg?style=flat-square)]()
+[![Plateforme](https://img.shields.io/cocoapods/p/MCSlidingTabs.svg?style=flat-square)]()
+[![Doc](https://img.shields.io/cocoapods/metrics/doc-percent/MCSlidingTabs.svg?style=flat-square)]()
+
 # MCSlidingTabs
 Simple sliding tabs UI element fully customizable for iOS
 
